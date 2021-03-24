@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Deletion Confirmation";
+}
+
+@* Show Confirmation that movie was deleted from database. Allow option to enter another movie or view the database. *@
+
+<div class="text-center">
+    <h1>You have successfully deleted @TempData["Title"] from the database.</h1>
+    <br />
+    <a class="btn btn-primary" asp-controller="Home" asp-action="ViewMovies">Click here to view the movie database</a>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="EnterMovie">Click here to enter a new movie</a>
+</div>

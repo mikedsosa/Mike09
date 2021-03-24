@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "View Movies";
+    @model IEnumerable<Movie>
+    ViewBag.Movie = Model;
+}
+
+@*View to go display the database*@
+
+<div class="text-center">
+    <h1>View Movies in Database</h1>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Category</th>
+            <th scope="col">Director</th>
+            <th scope="col">Year</th>
+            <th scope="col">Edited?</th>
+            <th scope="col">Lent To</th>
+            <th scope="col">Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @*Go through each itteration of a movie and add info to the View*@
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@m.Title</td>
+                <td>@m.Category</td>
+                <td>@m.Director</td>
+                <td>@m.Year</td>
+                <td>@m.Edited</td>
+                <td>@m.LentTo</td>
+                <td>@m.Notes</td>
+                <td>
+                    @*Also add a Edit option*@
+                    <form asp-action="EditMoviePartOne" method="post">
+                        <input type="hidden" name="movieID" value="@m.MovieID" />
+                        <button type="submit" class="btn btn-warning btn-sm">Edit Movie</button>
+                    </form>
+                    <br />
+                </td>
+                <td>
+                    @*Also add a Delete option*@
+                    <form asp-action="DeleteMovie" method="post">
+                        <input type="hidden" name="movieID" value="@m.MovieID" />
+                        <button type="submit" class="btn btn-danger btn-sm">Delete Movie</button>
+                    </form>
+                </td>
+            </tr>
+}
+    </tbody>
+</table>

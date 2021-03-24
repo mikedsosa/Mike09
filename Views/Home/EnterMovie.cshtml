@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Enter a Movie";
+    @model Mike09.Models.Movie
+
+}
+
+@*View to enter a new movie to the DB*@
+<div class="text-center">
+    <h1>Enter a movie to submit it to the database:</h1>
+</div>
+
+<div class="text-center">
+    <form asp-action="EnterMovie" method="post">
+        <div class="row">
+            <label class="col" asp-for="Category">Category:</label>
+            <input class="col" asp-for="Category" />
+        </div>
+        <br />
+
+        <div class="row">
+            <label class="col" asp-for="Title">Title:</label>
+            <input class="col" asp-for="Title" />
+        </div>
+        <br />
+
+        <div class="row">
+            <label class="col" asp-for="Year">Year:</label>
+            <input class="col" asp-for="Year" />
+        </div>
+        <br />
+
+        <div class="row">
+            <label class="col" asp-for="Director">Director:</label>
+            <input class="col" asp-for="Director" />
+        </div>
+        <br />
+
+        <div class="row">
+            <label class="col" asp-for="Rating">Rating:</label>
+            <select class="col" asp-for="Rating">
+                <option value=""></option>
+                <option value="G">G</option>
+                <option value="PG">PG</option>
+                <option value="PG13">PG-13</option>
+                <option value="R">R</option>
+            </select>
+        </div>
+        <br />
+
+        <div class="row">
+            <label class="col" asp-for="Edited">Edited:</label>
+            <select class="col" asp-for="Edited">
+                <option value="false"></option>
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+            </select>
+        </div>
+        <br />
+
+        <div class="row">
+            <label class="col" asp-for="LentTo">Lent To:</label>
+            <input class="col" asp-for="LentTo" placeholder="Leave blank if N/A" />
+        </div>
+        <br />
+
+        <div class="row">
+            <label class="col" asp-for="Notes">Notes:</label>
+            <input class="col" asp-for="Notes" />
+        </div>
+        <br />
+
+        <button type="submit" class="btn btn-primary">Send Movie to DB</button>
+
+        <div asp-validation-summary="All"></div>
+
+    </form>
+</div>

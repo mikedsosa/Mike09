@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Edit Confirmation";
+}
+
+@* Show Confirmation that movie was edited in database. Allow option to enter another movie or view the database. *@
+<div class="text-center">
+    <h1>You have successfully Edited @TempData["Title"].</h1>
+    <br />
+    <a class="btn btn-primary" asp-controller="Home" asp-action="ViewMovies">Click here to view the movie database</a>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="EnterMovie">Click here to enter a new movie</a>
+</div>

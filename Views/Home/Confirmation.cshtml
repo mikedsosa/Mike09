@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Confirmation";
+    @model Mike09.Models.Movie
+
+}
+
+<div class="text-center">
+    <h1>Congratulations! You have successfully entered @Model.Title into the database!</h1>
+    <br />
+    <a class="btn btn-primary" asp-controller="Home" asp-action="ViewMovies">Click here to view the movie database</a>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="EnterMovie">Click here to enter a new movie</a>
+</div>
